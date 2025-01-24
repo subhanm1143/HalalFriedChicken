@@ -1,0 +1,184 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('../imgs/Background.png'); /* Replace with the correct image path */
+    background-repeat: repeat; /* This will tile the image */
+    background-size: 100% auto; /* This ensures the image tiles without scaling */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+  }
+  
+  header .logo img {
+    width: 100px;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .order-button {
+    background-color: #d01a5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .order-button:hover {
+    background-color: #b01550;
+  }
+  
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    color: white;
+  }
+  
+  .hero-text {
+    flex: 1; /* Ensure text takes up available space */
+    padding-right: 20px;
+    background-color: #ff5a5f; /* Red background color for the bubble */
+    border-radius: 20px; /* Rounded corners to create the bubble effect */
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add some shadow for better visibility */
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem; /* Larger text for title */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white; /* White text inside the red bubble */
+  }
+  
+  .hero-text h2 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: white; /* White text inside the red bubble */
+  }
+  
+  .hero-text .address {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: white; /* White text inside the red bubble */
+  }
+  
+  .hero-image {
+    flex: 1;
+    text-align: center; /* Center the image horizontally */
+  }
+  
+  .hero-image img {
+    max-width: 100%; /* Ensure it fits within the container */
+    height: auto;
+    max-height: 400px; /* Set a max height to avoid oversized images */
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design for Hero Section */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      padding: 30px;
+      text-align: center;
+    }
+  
+    .hero-text h1 {
+      font-size: 2.5rem; /* Adjust size for smaller screens */
+    }
+  
+    .hero-text h2 {
+      font-size: 1.4rem; /* Adjust size for smaller screens */
+    }
+  
+    .hero-image img {
+      max-height: 300px; /* Adjust image size on small screens */
+    }
+  }
+  
+    
+  .popular-items {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .popular-items h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .item-slider {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .item {
+    text-align: center;
+    max-width: 200px;
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .full-menu {
+    background-color: #d01a5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .full-menu:hover {
+    background-color: #b01550;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  footer .footer-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
