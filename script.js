@@ -45,15 +45,68 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
     marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
 
-document.querySelectorAll('.chicken-piece').forEach((chicken) => {
-    const randomStartY = Math.random() * 100; // Generate a random Y position (0% to 100%)
-    const randomEndY = Math.random() * 100; // Generate another random Y position (0% to 100%)
-    const randomDuration = Math.random() * 5 + 10; // Random duration between 10s and 15s
-    const randomDelay = Math.random() * 5; // Random delay between 0s and 5s
+document.addEventListener("DOMContentLoaded", () => {
+    const flyingContainer = document.querySelector('.flying-chickens');
   
-    chicken.style.setProperty('--random-start-y', `${randomStartY}vh`); // Assign random start Y position
-    chicken.style.setProperty('--random-end-y', `${randomEndY}vh`); // Assign random end Y position
-    chicken.style.animationDuration = `${randomDuration}s`; // Assign random animation duration
-    chicken.style.animationDelay = `${randomDelay}s`; // Assign random delay
+    const chickenImages = [
+      'imgs/FlyingChicken1.png',
+      'imgs/FlyingChicken2.png',
+      'imgs/FlyingChicken3.png',
+    ];
+    const chickens = [];
+  
+    // Create 3 of each chicken image
+    chickenImages.forEach((imageSrc) => {
+      for (let i = 0; i < 3; i++) {
+        const chicken = document.createElement('img');
+        chicken.src = imageSrc; // Set the chicken image
+        chicken.classList.add('chicken-piece');
+  
+        // Set initial random positions
+        chicken.style.top = `${Math.random() * (window.innerHeight - 70)}px`;
+        chicken.style.left = `${Math.random() * (window.innerWidth - 70)}px`;
+  
+        // Random speed and direction
+        chickens.push({
+          element: chicken,
+          speedX: (Math.random() * 2 + 1) * (Math.random() > 0.5 ? 1 : -1),
+          speedY: (Math.random() * 2 + 1) * (Math.random() > 0.5 ? 1 : -1),
+        });
+  
+        flyingContainer.appendChild(chicken);
+      }
+    });
+  
+    function moveChickens() {
+      chickens.forEach((chicken) => {
+        const rect = chicken.element.getBoundingClientRect();
+  
+        // Current positions
+        let currentTop = parseFloat(chicken.element.style.top);
+        let currentLeft = parseFloat(chicken.element.style.left);
+  
+        // Update positions
+        currentTop += chicken.speedY;
+        currentLeft += chicken.speedX;
+  
+        // Bounce off edges
+        if (currentTop <= 0 || currentTop + rect.height >= window.innerHeight) {
+          chicken.speedY *= -1; // Reverse vertical direction
+        }
+        if (currentLeft <= 0 || currentLeft + rect.width >= window.innerWidth) {
+          chicken.speedX *= -1; // Reverse horizontal direction
+        }
+  
+        // Apply new positions
+        chicken.element.style.top = `${currentTop}px`;
+        chicken.element.style.left = `${currentLeft}px`;
+      });
+  
+      // Animate the movement
+      requestAnimationFrame(moveChickens);
+    }
+  
+    // Start animation
+    moveChickens();
   });
   

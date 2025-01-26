@@ -6,12 +6,12 @@
   }
   
   body {
-    background: #ffffff;
+    background: #f9eddd;
     background-repeat: repeat; /* This will tile the image */
     background-size: 100% auto; /* This ensures the image tiles without scaling */
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: "Copperplate",monospace;
     font-size: 20px;
     color: #333;
   }
@@ -44,17 +44,19 @@
   }
   
   .order-button {
-    background-color: #d01a5f;
+    background-color: #a82e21;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    transition: transform 0.2s;
   }
   
   .order-button:hover {
-    background-color: #b01550;
+    background-color: #cf3a2a;
+    transform: scale(1.1);
   }
   @media (max-width: 890px) {
     header nav {
@@ -83,7 +85,7 @@
   .hero-text {
     flex: 1; /* Ensure text takes up available space */
     padding-right: 20px;
-    background-color: #ff5a5f; /* Red background color for the bubble */
+    background-color: #a82e21; /* Red background color for the bubble */
     border-radius: 20px; /* Rounded corners to create the bubble effect */
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add some shadow for better visibility */
@@ -210,19 +212,21 @@
   }
   
   .full-menu {
-    background-color: #d01a5f;
+    background-color: #a82e21;
     color: white;
     border: none;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 10px 20px;
+    padding: 20px 40px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    transition: transform 0.2s;
   }
   
   .full-menu:hover {
-    background-color: #b01550;
+    background-color: #cf3a2a;
+    transform: scale(1.2);
   }
   
 
@@ -303,7 +307,7 @@
     .marquee:before, .marquee:after { width: 5rem; }
   } 
   .menu-card-popular div {
-    background: #ffffff;
+    background:#ffffff;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
@@ -313,7 +317,7 @@
   }
   
   .menu-card-popular div:hover {
-    transform: translateY(-5px);
+    transform: scale(.9);
   }
   
   .menu-card-popular img {
@@ -412,50 +416,82 @@
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Ensure it doesn't block user interaction */
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: -1;
   overflow: hidden;
-  z-index: -1; /* Keep it behind other elements */
 }
 
 .chicken-piece {
   position: absolute;
-  width: 100px; /* Adjust size of chicken pieces */
+  width: 100px; /* Adjust chicken size */
   height: auto;
-  animation: fly-across 10s linear infinite;
-  opacity: 0; /* Slight transparency */
+  pointer-events: none; /* Disable interaction */
+  user-select: none;
+  transition: transform 0.2s; /* Optional smooth movement */
 }
 
-/* Keyframes for the flying animation */
-@keyframes fly-across {
-  0% {
-    transform: translate(-10vw, var(--random-start-y)); /* Start slightly off-screen left */
-    opacity: 0; /* Fade in */
+/*INFO CARDS*/
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 20px;
+}
+
+.info-cards .card {
+  flex: 1 1 calc(25% - 20px);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-cards .card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.info-cards .card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.info-cards .card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.info-cards .card .card-link {
+  font-size: 1rem;
+  color: #d01a5f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.info-cards .card .card-link:hover {
+  color: #b01550;
+}
+
+@media screen and (max-width: 800px) {
+  .info-cards {
+      flex-direction: column;
+      gap: 30px;
   }
-  10% {
-    opacity: 1; /* Fade in */
-  }
-  50% {
-    transform: translate(50vw, var(--random-end-y)); /* Move to the middle */
-    opacity: 1; /* Fully visible */
-  }
-  100% {
-    transform: translate(110vw, var(--random-end-y)); /* End slightly off-screen right */
+
+  .info-cards .card {
+      flex: 1 1 100%;
   }
 }
-
-/* Individual chicken variations */
-.chicken-piece:nth-child(1) {
-  animation-delay: 0s;
-  animation-duration: 12s;
-}
-
-.chicken-piece:nth-child(2) {
-  animation-delay: 2s;
-  animation-duration: 10s;
-}
-
-.chicken-piece:nth-child(3) {
-  animation-delay: 4s;
-  animation-duration: 14s;
-}
-
