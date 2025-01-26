@@ -405,3 +405,57 @@
     height: 150px;
   }
 }
+
+.flying-chickens {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure it doesn't block user interaction */
+  overflow: hidden;
+  z-index: -1; /* Keep it behind other elements */
+}
+
+.chicken-piece {
+  position: absolute;
+  width: 100px; /* Adjust size of chicken pieces */
+  height: auto;
+  animation: fly-across 10s linear infinite;
+  opacity: 0; /* Slight transparency */
+}
+
+/* Keyframes for the flying animation */
+@keyframes fly-across {
+  0% {
+    transform: translate(-10vw, var(--random-start-y)); /* Start slightly off-screen left */
+    opacity: 0; /* Fade in */
+  }
+  10% {
+    opacity: 1; /* Fade in */
+  }
+  50% {
+    transform: translate(50vw, var(--random-end-y)); /* Move to the middle */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: translate(110vw, var(--random-end-y)); /* End slightly off-screen right */
+  }
+}
+
+/* Individual chicken variations */
+.chicken-piece:nth-child(1) {
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+
+.chicken-piece:nth-child(2) {
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.chicken-piece:nth-child(3) {
+  animation-delay: 4s;
+  animation-duration: 14s;
+}
+

@@ -44,3 +44,16 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 for(let i=0; i<marqueeElementsDisplayed; i++) {
     marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
+
+document.querySelectorAll('.chicken-piece').forEach((chicken) => {
+    const randomStartY = Math.random() * 100; // Generate a random Y position (0% to 100%)
+    const randomEndY = Math.random() * 100; // Generate another random Y position (0% to 100%)
+    const randomDuration = Math.random() * 5 + 10; // Random duration between 10s and 15s
+    const randomDelay = Math.random() * 5; // Random delay between 0s and 5s
+  
+    chicken.style.setProperty('--random-start-y', `${randomStartY}vh`); // Assign random start Y position
+    chicken.style.setProperty('--random-end-y', `${randomEndY}vh`); // Assign random end Y position
+    chicken.style.animationDuration = `${randomDuration}s`; // Assign random animation duration
+    chicken.style.animationDelay = `${randomDelay}s`; // Assign random delay
+  });
+  
