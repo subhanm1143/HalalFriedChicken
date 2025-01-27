@@ -16,61 +16,96 @@
     color: #333;
   }
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000000;
+/* General Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+}
+
+/* Logo Styling */
+header .logo img {
+  width: 100px;
+  transition: transform 0.3s; /* Add smooth transitions */
+  cursor: pointer;
+}
+
+header .logo img:hover {
+  transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+/* Navigation Menu */
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  position: relative; /* Needed for pseudo-elements */
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #cf3a2a; /* Change color on hover */
+}
+
+/* Add underline animation */
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Slightly below the text */
+  width: 0;
+  height: 2px;
+  background-color: #cf3a2a;
+  transition: width 0.3s;
+}
+
+header nav ul li a:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+/* Order Button */
+.order-button {
+  background-color: #a82e21;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #cf3a2a;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 890px) {
+  header nav {
+    display: none; /* Hide the navigation menu */
   }
-  
-  header .logo img {
-    width: 100px;
-  }
-  
-  header nav ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  header nav ul li {
-    margin: 0 15px;
-  }
-  
-  header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  
+
   .order-button {
-    background-color: #a82e21;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s;
+    margin-left: auto; /* Align the button to the far right */
   }
-  
-  .order-button:hover {
-    background-color: #cf3a2a;
-    transform: scale(1.1);
+
+  header {
+    justify-content: space-between; /* Ensure logo and button stay on opposite ends */
   }
-  @media (max-width: 890px) {
-    header nav {
-      display: none; /* Hide the navigation menu */
-    }
-  
-    .order-button {
-      margin-left: auto; /* Align the button to the far right */
-    }
-  
-    header {
-      justify-content: space-between; /* Ensure logo and button stay on opposite ends */
-    }
-  }
+}
+
   
   
 /* Hero Section */
@@ -84,30 +119,48 @@
   
   .hero-text {
     flex: 1; /* Ensure text takes up available space */
-    padding-right: 20px;
+    position: relative;
+    padding: 50px 60px; /* Increase padding to make the bubble bigger */
     background-color: #a82e21; /* Red background color for the bubble */
-    border-radius: 20px; /* Rounded corners to create the bubble effect */
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add some shadow for better visibility */
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 40% 60% 50% 70% / 60% 50% 70% 40%; /* Organic bubble shape */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+    transition: all 0.5s ease-in-out; /* Smooth hover transition */
   }
   
   .hero-text h1 {
-    font-size: 3rem; /* Larger text for title */
+    font-size: 4rem; /* Larger text for title */
     font-weight: bold;
     margin-bottom: 15px;
     color: white; /* White text inside the red bubble */
   }
   
   .hero-text h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* Increase size of subtitle */
     margin: 10px 0;
     color: white; /* White text inside the red bubble */
   }
   
   .hero-text .address {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Slightly bigger text for address */
     margin-top: 20px;
     color: white; /* White text inside the red bubble */
+  }
+  
+  /* Optional: Animation for a dynamic bubble */
+  @keyframes bubbleWiggle {
+    0%, 100% {
+      border-radius: 40% 60% 50% 70% / 60% 50% 70% 40%;
+    }
+    50% {
+      border-radius: 50% 40% 60% 50% / 50% 70% 40% 60%;
+    }
+  }
+  
+  .hero-text {
+    animation: bubbleWiggle 4s infinite ease-in-out; /* Subtle bubbling effect */
   }
   
   .hero-image {
@@ -139,7 +192,7 @@
   
   .menu-card h3 {
     font-size: 1.6rem; /* Slightly smaller font size */
-    color: #003366;
+    color: #966751;
     font-weight: bold;
     margin-bottom: 5px; /* Reduced spacing */
   }
@@ -330,7 +383,7 @@
   
   .menu-card-popular h3 {
     font-size: 1.2rem;
-    color: #003366;
+    color: #966751;
     font-weight: bold;
     margin-bottom: 5px;
   }
@@ -464,7 +517,7 @@
 .info-cards .card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #003366;
+  color: #966751;
 }
 
 .info-cards .card p {
@@ -475,7 +528,7 @@
 
 .info-cards .card .card-link {
   font-size: 1rem;
-  color: #d01a5f;
+  color: #a82e21;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
