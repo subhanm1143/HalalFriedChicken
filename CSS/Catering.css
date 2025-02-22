@@ -1,0 +1,147 @@
+/* Catering.css */
+
+/* --------------------------
+   Catering Hero Section
+--------------------------- */
+.catering-hero {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000; /* Fallback if no background image */
+  }
+  
+  .catering-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0); /* Overlay for readability */
+    z-index: 1;
+  }
+  
+  .catering-hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-family: "League Gothic", sans-serif;
+    padding: 0 20px;
+  }
+  
+  .catering-hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .catering-hero-text p {
+    font-size: 1.5rem;
+  }
+  
+  /* --------------------------
+     Catering Form Section
+  --------------------------- */
+  .catering-form-section {
+    padding: 60px 20px;
+    /* No background color on the section itself */
+  }
+  
+  .catering-form-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;  /* White background for the form */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .catering-form-section h2 {
+    font-family: "Copperplate", monospace;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #a82e21;
+    border-bottom: 2px solid #a82e21;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .catering-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .catering-form-section .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .catering-form-section .form-group label {
+    font-family: "Copperplate", monospace;
+    font-weight: bold;
+    color: #a82e21;
+    margin-bottom: 5px;
+  }
+  
+  .catering-form-section .form-group input,
+  .catering-form-section .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .catering-form-section .form-group input:focus,
+  .catering-form-section .form-group textarea:focus {
+    outline: none;
+    border-color: #a82e21;
+  }
+  
+  .catering-form-section .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .catering-form-section .submit-button {
+    background-color: #a82e21;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .catering-form-section .submit-button:hover {
+    background-color: #cf3a2a;
+  }
+  
+  /* --------------------------
+     Responsive Adjustments
+  --------------------------- */
+  @media (max-width: 600px) {
+    .catering-hero {
+      height: 300px;
+    }
+    
+    .catering-hero-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    .catering-hero-text p {
+      font-size: 1.2rem;
+    }
+    
+    .catering-form-section .container {
+      padding: 20px;
+    }
+  }
+  
