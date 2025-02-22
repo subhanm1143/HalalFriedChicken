@@ -275,12 +275,12 @@ header nav ul li a:hover::after {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.4s;
   }
   
   .full-menu:hover {
     background-color: #cf3a2a;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   
 

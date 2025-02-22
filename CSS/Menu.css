@@ -1,0 +1,219 @@
+/* Menu Page Styles (menu.css) */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #f9eddd;
+    background-repeat: repeat; /* This will tile the image */
+    background-size: 100% auto; /* This ensures the image tiles without scaling */
+    margin: 0;
+    padding: 0;
+    font-family: "Copperplate",monospace;
+    font-size: 20px;
+    color: #333;
+  }
+/* Menu Hero Section */
+.menu-hero {
+    background: url('../imgs/Background.png') center/cover no-repeat;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+  }
+  
+  .menu-hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: "Copperplate", monospace;
+    color: #fff;
+  }
+  
+  .menu-hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+  }
+  
+  .menu-hero-text p {
+    font-size: 1.5rem;
+  }
+  
+  /* Menu Items Section */
+  .menu-items {
+    padding: 40px;
+    background-color: #f9eddd;  /* Matches your main background */
+    color: #333;
+  }
+  
+  .menu-category {
+    margin-bottom: 60px;
+  }
+  
+  .menu-category h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: "Copperplate", monospace;
+    color: #a82e21;
+    border-bottom: 2px solid #a82e21;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .menu-item-info {
+    padding: 15px;
+    font-family: "Copperplate", monospace;
+  }
+  
+  .menu-item-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #a82e21;
+  }
+  
+  .menu-item-info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .menu-item-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #cf3a2a;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .menu-hero {
+      height: 200px;
+    }
+  
+    .menu-hero-text h1 {
+      font-size: 2.5rem;
+    }
+  
+    .menu-hero-text p {
+      font-size: 1.2rem;
+    }
+  
+    .menu-items {
+      padding: 20px;
+    }
+  
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+/* Carousel Container */
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Add horizontal padding so edges aren’t cut off */
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  /* Use flex gap for spacing instead of margins */
+  .carousel-container .menu-grid {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Each menu item takes up 25% of the container width (adjust as needed) */
+  .carousel-container .menu-grid .menu-item {
+    flex: 0 0 calc(25% - 15px);
+    /* Remove any margin, since gap is handling spacing */
+  }
+  
+  
+  /* Carousel Navigation Buttons */
+  .carousel-button {
+    background-color: #a82e21;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-button.left {
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+  
+  .carousel-button.right {
+    margin-left: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Optional: Disable button if no more items to slide */
+  .carousel-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 600px) {
+    /* For phone screens, show two cards per view */
+    .carousel-container .menu-grid .menu-item {
+      flex: 0 0 calc(50% - 16px); /* Adjust 20px if your gap changes */
+    }
+    
+    /* Optionally, adjust carousel container padding if needed */
+    .carousel-container {
+      padding: 0 5px;
+    }
+  }
+  
