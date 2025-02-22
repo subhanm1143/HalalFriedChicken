@@ -1,1 +1,113 @@
-Careers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Halal Fried Chicken</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/Careers.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="imgs/HalalFriedLogo.png" alt="Halal Fried Chicken Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Careers.html" class="active">Careers</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="Catering.html">Catering</a></li>
+        <li><a href="Press.html">Press</a></li>
+      </ul>
+    </nav>
+    <button class="order-button">Order Online</button>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <!-- Careers Hero Section -->
+    <section class="careers-hero">
+      <div class="careers-hero-text" data-aos="fade-in" data-aos-duration="1000">
+        <h1>Work With Us</h1>
+        <p>
+          We’d love to have you join our team! Please use the form below to apply.
+        </p>
+      </div>
+    </section>
+
+    <!-- Careers Form Section -->
+    <section class="careers-form-section">
+      <div class="container">
+        <form action="submit-careers.php" method="POST" enctype="multipart/form-data" data-aos="fade-up" data-aos-duration="1000">
+          <div class="form-group">
+            <label for="name">Name - Required</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email - Required</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number - Required</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="cover-letter">Cover Letter - Required</label>
+            <textarea id="cover-letter" name="cover_letter" required placeholder="Write your cover letter"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="resume">Resumé - Required</label>
+            <input type="file" id="resume" name="resume" required>
+          </div>
+          <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <!-- Left Section: Logo and Address -->
+      <div class="footer-left">
+        <img src="imgs/HalalFriedLogo.png" alt="Halal Fried Chicken Logo" class="footer-logo">
+        <div class="footer-address">
+          <p>3654 N Freeway Blvd</p>
+          <p>Sacramento, CA 95834</p>
+        </div>
+      </div>
+      <!-- Center Section: Map -->
+      <div class="footer-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12465.845843492089!2d-121.5080110826172!3d38.6382685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809add6b4972fd57%3A0xed23668c4d420136!2sHalal%20Fried%20Chicken!5e0!3m2!1sen!2sus!4v1737852714823!5m2!1sen!2sus" width="100%;" height="100%;" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <!-- Right Section: Hours -->
+      <div class="footer-right">
+        <p>Sunday - Thursday</p>
+        <p>11 am - 9 pm</p>
+        <br>
+        <p>Friday & Saturday</p>
+        <p>11 am - 10 pm</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init();
+  </script>
+  <div class="flying-chickens">
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

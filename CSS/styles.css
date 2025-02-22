@@ -15,6 +15,12 @@
     font-size: 20px;
     color: #333;
   }
+  nav ul li a.active {
+    color: #cf3a2a; /* Accent color for active state */
+    font-weight: bold;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+  }
+  
   
 /* General Header Styling */
 header {
