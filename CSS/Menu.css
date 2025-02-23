@@ -94,19 +94,28 @@
   
   .menu-item img {
     width: 100%;
-    height: auto;
+    height: 50%;
     display: block;
+  }
+  .menu-item svg {
+    display: block;
+    margin: 0 auto;
   }
   
   .menu-item-info {
     padding: 15px;
     font-family: "Copperplate", monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px; /* Adjust as needed to ensure uniform height */
   }
   
   .menu-item-info h3 {
     font-size: 1.6rem;
     margin-bottom: 10px;
     color: #a82e21;
+    /* Optional: Set a fixed height or line-height if needed */
   }
   
   .menu-item-info p {
@@ -120,7 +129,7 @@
     font-weight: bold;
     color: #cf3a2a;
   }
-  
+    
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .menu-hero {
