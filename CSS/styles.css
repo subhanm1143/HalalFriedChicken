@@ -448,7 +448,7 @@ header nav ul li a:hover::after {
 /* Right Section */
 .footer-right {
   text-align: center;
-  line-height: 1.6;
+  line-height: 1;
   flex: 1;
 }
 

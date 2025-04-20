@@ -84,7 +84,12 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures consistent height inside carousel */
+    min-height: 360px; /* Adjust this to your preferred card height */
   }
+  
   
   .menu-item:hover {
     transform: translateY(-5px);
@@ -92,42 +97,49 @@
   
   .menu-item img {
     width: 100%;
-    height: 50%;
-    display: block;
-  }
-  .menu-item svg {
-    display: block;
-    margin: 0 auto;
+    height: 200px; /* Fixed height */
+    object-fit: cover;
+    flex-shrink: 0;
   }
   
   .menu-item-info {
-    padding: 15px;
-    font-family: "Copperplate", monospace;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 150px; /* Adjust as needed to ensure uniform height */
+    justify-content: flex-start;
+    padding: 15px;
+    font-family: "Copperplate", monospace;
+    min-height: 140px; /* Adjust as needed */
   }
   
+  
+  
   .menu-item-info h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
     color: #a82e21;
-    /* Optional: Set a fixed height or line-height if needed */
+    line-height: 1.2;
+    height: 3.6em; /* Force consistent title height (2 lines max) */
+    overflow: hidden;
   }
   
   .menu-item-info p {
     font-size: 1rem;
-    margin-bottom: 10px;
     color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* show max 2 lines */
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
   }
   
   .menu-item-info .price {
     font-size: 1.2rem;
     font-weight: bold;
     color: #cf3a2a;
+    margin-top: auto; /* THIS forces it to bottom */
   }
-    
+   
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .menu-hero {
@@ -177,6 +189,9 @@
   .carousel-container .menu-grid .menu-item {
     flex: 0 0 calc(25% - 15px);
     /* Remove any margin, since gap is handling spacing */
+    height: 100%;
+  display: flex;
+  flex-direction: column;
   }
   
   
